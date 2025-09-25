@@ -1,0 +1,67 @@
+body {
+    font-family: 'Syne Mono', monospace;
+    background-color: #f8dee659;
+    color: #2e0606;
+    line-height: 1.6;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h1, h2, h3 {
+    color: #4a0c0c;
+    font-size: 55px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+/*headphones image sizing*/
+img {
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+a {
+    color: #2f941b;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #cc004e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 45px;
+}
+.button:hover {
+    background: #8e1c1c;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
