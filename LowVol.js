@@ -6,12 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.querySelector('img');
         const imgRect = img.getBoundingClientRect();
         
-        // Canvas area as a percentage of the image size and positioned relative to the image
-        const canvasWidthPercent = 0.35; // 35% of image width
-        const canvasHeightPercent = 0.35; // 35% of image height
-        const offsetXPercent = 0.25; // 25% from left edge of image
-        const offsetYPercent = 0.48; // 48% from top edge of image (moved down)
         
+        const canvasWidthPercent = 0.35; 
+        const canvasHeightPercent = 0.35; 
+        const offsetXPercent = 0.25; 
+        const offsetYPercent = 0.48; 
         const canvasWidth = imgRect.width * canvasWidthPercent;
         const canvasHeight = imgRect.height * canvasHeightPercent;
         const canvasLeft = imgRect.left + (imgRect.width * offsetXPercent);
@@ -32,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         dot.className = 'floating-dot2';
         
         const canvas = getCanvasArea();
-        
-        // Calculate dot size based on canvas size (3% of canvas width, minimum 15px, maximum 25px)
-        const dotSize = Math.max(30, Math.min(25, canvas.width * 0.03));
+
+
+        const dotSize = Math.max(20, Math.min(35, canvas.width * 0.04));
         dot.style.width = dotSize + 'px';
         dot.style.height = dotSize + 'px';
         
@@ -53,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dayNumber >= 1 && dayNumber <= 5) {
             const textLabel = document.createElement('span');
             textLabel.className = 'dot-text-label';
-            textLabel.textContent = dayLabels[dayNumber - 1];
+            textLabel.textContent = `Day ${dayNumber} ${dayLabels[dayNumber - 1]}`;
             textLabel.style.position = 'absolute';
             textLabel.style.left = (startX + dotSize + 5) + 'px'; 
             textLabel.style.top = (startY - 5) + 'px'; 
             textLabel.style.color = '#db285e';
-            // Scale text size based on canvas size (minimum 10px, maximum 16px)
-            const fontSize = Math.max(10, Math.min(16, canvas.width * 0.02));
+            // Scale text size based on canvas size (minimum 14px, maximum 24px)
+            const fontSize = Math.max(14, Math.min(24, canvas.width * 0.03));
             textLabel.style.fontSize = fontSize + 'px';
             textLabel.style.fontWeight = 'bold';
             textLabel.style.pointerEvents = 'none';
@@ -124,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.canvasBounds = newCanvas;
             
             // Recalculate dot size based on new canvas size
-            const newDotSize = Math.max(15, Math.min(25, newCanvas.width * 0.03));
+            const newDotSize = Math.max(20, Math.min(35, newCanvas.width * 0.04));
             dot.style.width = newDotSize + 'px';
             dot.style.height = newDotSize + 'px';
             dot.dotSize = newDotSize;
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Update text label position and size if it exists
             if (dot.textLabel) {
-                const newFontSize = Math.max(10, Math.min(16, newCanvas.width * 0.02));
+                const newFontSize = Math.max(14, Math.min(24, newCanvas.width * 0.03));
                 dot.textLabel.style.fontSize = newFontSize + 'px';
                 dot.textLabel.style.left = (clampedX + newDotSize + 5) + 'px';
                 dot.textLabel.style.top = (clampedY - 5) + 'px';
