@@ -57,6 +57,37 @@ a:hover {
     background: #8e1c1c;
 }
 
+
+.floating-dot2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #db285e;
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Random moving green dots */
+.floating-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #2f941b;
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Day text as H2 below image */
+.day-text-h2 {
+    color: #2f941b;
+    font-size: 55px;
+    margin: 20px 0;
+    text-align: center;
+    display: none;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 12px;
