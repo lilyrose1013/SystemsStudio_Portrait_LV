@@ -15,16 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         //  text content green 
-        dayTextElement.textContent = `Day ${dayNumber}`;
+        const decibelRanges = ['21-37 dB', '48-53 dB', '32-36 dB', '61-65 dB', '51-58 dB'];
+        const decibelText = decibelRanges[dayNumber - 1] || '';
+        dayTextElement.textContent = `Day ${dayNumber}${decibelText ? ' ' + decibelText : ''}`;
         dayTextElement.style.color = '#2f941b';
         dayTextElement.style.display = 'block';
         
-        //  10 seconds
+        //  15 seconds
         setTimeout(() => {
             if (dayTextElement) {
                 dayTextElement.style.display = 'none';
             }
-        }, 10000);
+        }, 15000);
     }
    
     function getCanvasArea() {
