@@ -33,7 +33,7 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    min-width: 300px; /* Ensure minimum size for dot canvas area */
+    min-width: 300px; 
 }
 
 a {
@@ -44,18 +44,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #cc004e;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 45px;
-}
 .button:hover {
     background: #8e1c1c;
 }
@@ -63,7 +51,6 @@ a:hover {
 
 .floating-dot2 {
     position: absolute;
-    /* Dynamic width and height set by JavaScript */
     background-color: #db285e;
     border-radius: 50%;
     pointer-events: auto;
@@ -73,7 +60,6 @@ a:hover {
 /*  moving green dots */
 .floating-dot {
     position: absolute;
-    /* Dynamic width and height set by JavaScript */
     background-color: #2f941b;
     border-radius: 50%;
     pointer-events: auto;
@@ -89,23 +75,20 @@ a:hover {
     display: none;
 }
 
-/* Responsive breakpoints */
+
 @media (max-width: 600px) {
     .container {
         padding: 12px;
     }
     h1 {
-        font-size: clamp(24px, 6vw, 45px); /* Responsive heading */
+        font-size: clamp(35px, 6vw, 45px); 
     }
     
     img {
-        min-width: 250px; /* Smaller minimum on mobile */
+        min-width: 250px; 
     }
     
-    /* Dots will be sized dynamically by JavaScript */
-    
     .dot-text-label {
-        /* Font size will be set dynamically by JavaScript */
         white-space: nowrap;
     }
 }
@@ -120,7 +103,7 @@ a:hover {
     }
     
     img {
-        max-width: 80%; /* Slightly smaller on large screens */
+        max-width: 80%; 
     }
 }
 
@@ -130,6 +113,6 @@ a:hover {
     }
     
     img {
-        max-width: 70%; /* Even smaller on very large screens */
+        max-width: 70%; 
     }
 }
