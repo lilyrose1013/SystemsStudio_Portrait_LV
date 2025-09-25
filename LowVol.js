@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const canvasWidth = imgRect.width * canvasWidthPercent;
         const canvasHeight = imgRect.height * canvasHeightPercent;
         const canvasLeft = imgRect.left + (imgRect.width * offsetXPercent);
-        const canvasTop = imgRect.top + (imgRect.height * offsetYPercent);
+        const canvasTop = imgRect.top + (imgRect.height * offsetYPercent) + 20;
         
         return {
             left: canvasLeft,
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const canvas = getCanvasArea();
 
 
-        const dotSize = Math.max(20, Math.min(35, canvas.width * 0.04));
+        const dotSize = Math.max(25, Math.min(40, canvas.width * 0.04));
         dot.style.width = dotSize + 'px';
         dot.style.height = dotSize + 'px';
         
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.canvasBounds = newCanvas;
             
             // Recalculate dot size based on new canvas size
-            const newDotSize = Math.max(20, Math.min(35, newCanvas.width * 0.04));
+            const newDotSize = Math.max(40, Math.min(50, newCanvas.width * 0.04));
             dot.style.width = newDotSize + 'px';
             dot.style.height = newDotSize + 'px';
             dot.dotSize = newDotSize;
