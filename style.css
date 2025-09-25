@@ -3,6 +3,8 @@ body {
     background-color: #f8dee659;
     color: #2e0606;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -27,10 +29,11 @@ h1 {
 /*headphones image sizing*/
 img {
     max-width: 90%;
-    max-height: 90%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
+    min-width: 300px; /* Ensure minimum size for dot canvas area */
 }
 
 a {
@@ -60,39 +63,73 @@ a:hover {
 
 .floating-dot2 {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    /* Dynamic width and height set by JavaScript */
     background-color: #db285e;
     border-radius: 50%;
     pointer-events: auto;
     cursor: pointer;
 }
 
-/* Random moving green dots */
+/*  moving green dots */
 .floating-dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    /* Dynamic width and height set by JavaScript */
     background-color: #2f941b;
     border-radius: 50%;
     pointer-events: auto;
     cursor: pointer;
 }
 
-/* Day text as H2 below image */
+/*  text as H2 below image */
 .day-text-h2 {
     color: #2f941b;
-    font-size: 55px;
+    font-size: clamp(24px, 4vw, 55px); /* Responsive font size */
     margin: 20px 0;
     text-align: center;
     display: none;
 }
 
+/* Responsive breakpoints */
 @media (max-width: 600px) {
     .container {
         padding: 12px;
     }
     h1 {
-        font-size: 1.5em;
+        font-size: clamp(24px, 6vw, 45px); /* Responsive heading */
+    }
+    
+    img {
+        min-width: 250px; /* Smaller minimum on mobile */
+    }
+    
+    /* Dots will be sized dynamically by JavaScript */
+    
+    .dot-text-label {
+        /* Font size will be set dynamically by JavaScript */
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    h1 {
+        font-size: clamp(55px, 5vw, 70px);
+    }
+    
+    img {
+        max-width: 80%; /* Slightly smaller on large screens */
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    img {
+        max-width: 70%; /* Even smaller on very large screens */
     }
 }
